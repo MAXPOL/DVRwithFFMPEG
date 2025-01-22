@@ -52,33 +52,35 @@
     <div class="container mt-5">
     <!--
         <div class="text-center mb-4">
-            <h1>Live Video Streams</h1>
+            <h1>Live Video Streams BPPK</h1>
             <p>Watch multiple video streams digital camers</p>
         </div>
     -->  
         <div class="video-container">
-         <!--    
+         <!---->    
             <div class="video-item">
-              <video id="cam25main" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
+              <video id="cam25main" autoplay controls muted width="100%"></video>
             </div>
-        -->
+        
             <div class="video-item">
-               <video id="cam4main" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
-            </div>
-            <div class="video-item">
-               <video id="hostel4Cam2" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
-            </div>
-            <div class="video-item"> 
-               <video id="hostel4Cam3" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
+               <video id="cam4main" autoplay controls muted width="100%"></video>
             </div>
             <div class="video-item">
-                <video id="hostel4Cam4" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
+               <video id="hostel4Cam2" autoplay controls muted width="100%"></video>
             </div>
             <div class="video-item">
-                <video id="hostel4Cam1" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
+               <video id="hostel4Cam3" autoplay controls muted width="100%"></video>
+            </div>
+            <div class="video-item">
+                <video id="hostel4Cam4" autoplay controls muted width="100%"></video>
+            </div>
+            <!-- 
+            <div class="video-item">
+                <video id="hostel4Cam1" autoplay controls muted width="100%"></video>
              </div>
+            -->
             <div class="video-item">
-               <video id="hostel4Cam5" autoplay controls muted width="100%"></video> <!--CHANGE ID FOR YOUR PARAMETERS-->
+               <video id="hostel4Cam5" autoplay controls muted width="100%"></video>
             </div>
             <!-- ADD NEW <div class="video-item"><video id="ID SCRIPT" autoplay controls muted width="100%"></video></div> FOR VIEW NEW CAMERA-->
         </div>
@@ -88,10 +90,10 @@
 </body>
 </html>
 
-<!--Script for 25 cam
+<!--Script for 25 cam-->
     <script>
         const videoCam25main = document.getElementById('cam25main');
-        const videoSrcCam25main = 'http://192.168.***.***/cam25main/stream.m3u8';
+        const videoSrcCam25main = 'http://192.168.3.99/31.132.132.124:5540/stream.m3u8';
 
         if (Hls.isSupported()) {
             const hlsCam25main = new Hls();
@@ -108,32 +110,32 @@
             });
         }
     </script>
--->
+
 <!--Script for main 4 cam-->
 <script>
-    const videoCam4main = document.getElementById('cam4main');
-    const videoSrcCam4main = 'http://192.168.***.***/cam4main/stream.m3u8';
+    const videoCam4Main= document.getElementById('cam4main');
+    const videoSrcCam4Main = 'http://192.168.3.99/192.168.2.254:554/stream.m3u8';
 
     if (Hls.isSupported()) {
-        const hlsCam4main = new Hls();
-        hlsCam4main.loadSource(videoSrcCam4main);
-        hlsCam4main.attachMedia(videoCam4main);
-        hlsCam4main.on(Hls.Events.MANIFEST_PARSED, () => {
-            videoCam4main.play();
+        const hlsCam4Main= new Hls();
+        hlsCam4Main.loadSource(videoSrcCam4Main);
+        hlsCam4Main.attachMedia(videoCam4Main);
+        hlsCam4Main.on(Hls.Events.MANIFEST_PARSED, () => {
+            videoCam4Main.play();
         });
 
-    } else if (videoCam4main.canPlayType('application/vnd.apple.mpegurl')) {
-        videoCam4main.src = videoSrc;
-        videoCam4main.addEventListener('loadedmetadata', () => {
-            videoCam4main.play();
+    } else if (videoCam4Main.canPlayType('application/vnd.apple.mpegurl')) {
+        videoCam4Main.src = videoSrcCam4Main;
+        videoCam4Main.addEventListener('loadedmetadata', () => {
+            videoCam4Main.play();
         });
     }
 </script>
 <!---->
-<!--Script for Hostel 4 Cam 1 cam-->
+<!--Script for Hostel 4 Cam 1 cam
 <script>
     const videoHostel4Cam1 = document.getElementById('hostel4Cam1');
-    const videoSrcHostel4Cam1 = 'http://192.168.***.***/hostel4Cam1/stream.m3u8';
+    const videoSrcHostel4Cam1 = 'http://192.168.3.99/hostel4Cam1/stream.m3u8';
 
     if (Hls.isSupported()) {
         const hlsHostel4Cam1 = new Hls();
@@ -144,17 +146,17 @@
         });
 
     } else if (videoHostel4Cam1.canPlayType('application/vnd.apple.mpegurl')) {
-        videoHostel4Cam1.src = videoSrc;
+        videoHostel4Cam1.src = videoSrcHostel4Cam1;
         videoHostel4Cam1.addEventListener('loadedmetadata', () => {
             videoHostel4Cam1.play();
         });
     }
 </script>
-<!---->
+-->
 <!--Script for Hostel 4 Cam 2 cam-->
     <script>
         const videoHostel4Cam2 = document.getElementById('hostel4Cam2');
-        const videoSrcHostel4Cam2 = 'http://192.168.***.***/hostel4Cam2/stream.m3u8';
+        const videoSrcHostel4Cam2 = 'http://192.168.3.99/192.168.4.81:70/stream.m3u8';
 
         if (Hls.isSupported()) {
             const hlsHostel4Cam2 = new Hls();
@@ -165,7 +167,7 @@
             });
 
         } else if (videoHostel4Cam2.canPlayType('application/vnd.apple.mpegurl')) {
-            videoHostel4Cam2.src = videoSrc;
+            videoHostel4Cam2.src = videoSrcHostel4Cam2;
             videoHostel4Cam2.addEventListener('loadedmetadata', () => {
                 videoHostel4Cam2.play();
             });
@@ -175,7 +177,7 @@
 <!--Script for Hostel 4 Cam 3 cam-->
     <script>
         const videoHostel4Cam3 = document.getElementById('hostel4Cam3');
-        const videoSrcHostel4Cam3 = 'http://192.168.***.***/hostel4Cam3/stream.m3u8';
+        const videoSrcHostel4Cam3 = 'http://192.168.3.99/192.168.4.29:71/stream.m3u8';
 
         if (Hls.isSupported()) {
             const hlsHostel4Cam3 = new Hls();
@@ -186,7 +188,7 @@
             });
 
         } else if (videoHostel4Cam3.canPlayType('application/vnd.apple.mpegurl')) {
-            videoHostel4Cam3.src = videoSrc;
+            videoHostel4Cam3.src = videoSrcHostel4Cam3;
             videoHostel4Cam3.addEventListener('loadedmetadata', () => {
                 Hostel4Cam3.play();
             });
@@ -196,7 +198,7 @@
     <!--Script for Hostel 4 Cam 4 cam-->
     <script>
         const videoHostel4Cam4 = document.getElementById('hostel4Cam4');
-        const videoSrcHostel4Cam4  = 'http://192.168.***.***/hostel4Cam4/stream.m3u8';
+        const videoSrcHostel4Cam4  = 'http://192.168.3.99/192.168.4.186:72/stream.m3u8';
 
         if (Hls.isSupported()) {
             const hlsHostel4Cam4  = new Hls();
@@ -207,7 +209,7 @@
             });
 
         } else if (videoHostel4Cam4.canPlayType('application/vnd.apple.mpegurl')) {
-            videoHostel4Cam4.src = videoSrc;
+            videoHostel4Cam4.src = videoSrcHostel4Cam4;
             videoHostel4Cam4.addEventListener('loadedmetadata', () => {
                 videoHostel4Cam4.play();
             });
@@ -216,7 +218,7 @@
         <!--Script for Hostel 4 Cam 5 cam-->
         <script>
             const videoHostel4Cam5 = document.getElementById('hostel4Cam5');
-            const videoSrcHostel4Cam5  = 'http://192.168.***.***/hostel4Cam5/stream.m3u8';
+            const videoSrcHostel4Cam5  = 'http://192.168.3.99/192.168.2.251:554/stream.m3u8';
     
             if (Hls.isSupported()) {
                 const hlsHostel4Cam5  = new Hls();
@@ -227,7 +229,7 @@
                 });
     
             } else if (videoHostel4Cam5.canPlayType('application/vnd.apple.mpegurl')) {
-                videoHostel4Cam5.src = videoSrc;
+                videoHostel4Cam5.src = videoSrcHostel4Cam5;
                 videoHostel4Cam5.addEventListener('loadedmetadata', () => {
                     videoHostel4Cam5.play();
                 });
