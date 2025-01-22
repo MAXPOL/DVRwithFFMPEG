@@ -60,27 +60,9 @@
          <!---->    
             <div class="video-item">
               <video id="cam25main" autoplay controls muted width="100%"></video>
-            </div>
-        
+            </div>      
             <div class="video-item">
                <video id="cam4main" autoplay controls muted width="100%"></video>
-            </div>
-            <div class="video-item">
-               <video id="hostel4Cam2" autoplay controls muted width="100%"></video>
-            </div>
-            <div class="video-item">
-               <video id="hostel4Cam3" autoplay controls muted width="100%"></video>
-            </div>
-            <div class="video-item">
-                <video id="hostel4Cam4" autoplay controls muted width="100%"></video>
-            </div>
-            <!-- 
-            <div class="video-item">
-                <video id="hostel4Cam1" autoplay controls muted width="100%"></video>
-             </div>
-            -->
-            <div class="video-item">
-               <video id="hostel4Cam5" autoplay controls muted width="100%"></video>
             </div>
             <!-- ADD NEW <div class="video-item"><video id="ID SCRIPT" autoplay controls muted width="100%"></video></div> FOR VIEW NEW CAMERA-->
         </div>
@@ -90,10 +72,10 @@
 </body>
 </html>
 
-<!--Script for 25 cam-->
+<!--Script for cam1name-->
     <script>
-        const videoCam25main = document.getElementById('cam25main');
-        const videoSrcCam25main = 'http://192.168.3.99/31.132.132.124:5540/stream.m3u8';
+        const videoCam25main = document.getElementById('cam1name');
+        const videoSrcCam25main = 'http://ipAddressWebServer/cam1name/stream.m3u8';
 
         if (Hls.isSupported()) {
             const hlsCam25main = new Hls();
@@ -111,10 +93,10 @@
         }
     </script>
 
-<!--Script for main 4 cam-->
+<!--Script for cam2name-->
 <script>
-    const videoCam4Main= document.getElementById('cam4main');
-    const videoSrcCam4Main = 'http://192.168.3.99/192.168.2.254:554/stream.m3u8';
+    const videoCam2Name= document.getElementById('cam2name');
+    const videoSrcCam4Main = 'http://ipAddressWebServer/cam2name/stream.m3u8';
 
     if (Hls.isSupported()) {
         const hlsCam4Main= new Hls();
@@ -131,110 +113,7 @@
         });
     }
 </script>
-<!---->
-<!--Script for Hostel 4 Cam 1 cam
-<script>
-    const videoHostel4Cam1 = document.getElementById('hostel4Cam1');
-    const videoSrcHostel4Cam1 = 'http://192.168.3.99/hostel4Cam1/stream.m3u8';
 
-    if (Hls.isSupported()) {
-        const hlsHostel4Cam1 = new Hls();
-        hlsHostel4Cam1.loadSource(videoSrcHostel4Cam1);
-        hlsHostel4Cam1.attachMedia(videoHostel4Cam1);
-        hlsHostel4Cam1.on(Hls.Events.MANIFEST_PARSED, () => {
-            videoHostel4Cam1.play();
-        });
-
-    } else if (videoHostel4Cam1.canPlayType('application/vnd.apple.mpegurl')) {
-        videoHostel4Cam1.src = videoSrcHostel4Cam1;
-        videoHostel4Cam1.addEventListener('loadedmetadata', () => {
-            videoHostel4Cam1.play();
-        });
-    }
-</script>
--->
-<!--Script for Hostel 4 Cam 2 cam-->
-    <script>
-        const videoHostel4Cam2 = document.getElementById('hostel4Cam2');
-        const videoSrcHostel4Cam2 = 'http://192.168.3.99/192.168.4.81:70/stream.m3u8';
-
-        if (Hls.isSupported()) {
-            const hlsHostel4Cam2 = new Hls();
-            hlsHostel4Cam2.loadSource(videoSrcHostel4Cam2);
-            hlsHostel4Cam2.attachMedia(videoHostel4Cam2);
-            hlsHostel4Cam2.on(Hls.Events.MANIFEST_PARSED, () => {
-                videoHostel4Cam2.play();
-            });
-
-        } else if (videoHostel4Cam2.canPlayType('application/vnd.apple.mpegurl')) {
-            videoHostel4Cam2.src = videoSrcHostel4Cam2;
-            videoHostel4Cam2.addEventListener('loadedmetadata', () => {
-                videoHostel4Cam2.play();
-            });
-        }
-    </script>
-<!---->
-<!--Script for Hostel 4 Cam 3 cam-->
-    <script>
-        const videoHostel4Cam3 = document.getElementById('hostel4Cam3');
-        const videoSrcHostel4Cam3 = 'http://192.168.3.99/192.168.4.29:71/stream.m3u8';
-
-        if (Hls.isSupported()) {
-            const hlsHostel4Cam3 = new Hls();
-            hlsHostel4Cam3.loadSource(videoSrcHostel4Cam3);
-            hlsHostel4Cam3.attachMedia(videoHostel4Cam3);
-            hlsHostel4Cam3.on(Hls.Events.MANIFEST_PARSED, () => {
-                videoHostel4Cam3.play();
-            });
-
-        } else if (videoHostel4Cam3.canPlayType('application/vnd.apple.mpegurl')) {
-            videoHostel4Cam3.src = videoSrcHostel4Cam3;
-            videoHostel4Cam3.addEventListener('loadedmetadata', () => {
-                Hostel4Cam3.play();
-            });
-        }
-    </script>
-    <!---->
-    <!--Script for Hostel 4 Cam 4 cam-->
-    <script>
-        const videoHostel4Cam4 = document.getElementById('hostel4Cam4');
-        const videoSrcHostel4Cam4  = 'http://192.168.3.99/192.168.4.186:72/stream.m3u8';
-
-        if (Hls.isSupported()) {
-            const hlsHostel4Cam4  = new Hls();
-            hlsHostel4Cam4.loadSource(videoSrcHostel4Cam4);
-            hlsHostel4Cam4.attachMedia(videoHostel4Cam4);
-            hlsHostel4Cam4.on(Hls.Events.MANIFEST_PARSED, () => {
-                videoHostel4Cam4.play();
-            });
-
-        } else if (videoHostel4Cam4.canPlayType('application/vnd.apple.mpegurl')) {
-            videoHostel4Cam4.src = videoSrcHostel4Cam4;
-            videoHostel4Cam4.addEventListener('loadedmetadata', () => {
-                videoHostel4Cam4.play();
-            });
-        }
-    </script>
-        <!--Script for Hostel 4 Cam 5 cam-->
-        <script>
-            const videoHostel4Cam5 = document.getElementById('hostel4Cam5');
-            const videoSrcHostel4Cam5  = 'http://192.168.3.99/192.168.2.251:554/stream.m3u8';
-    
-            if (Hls.isSupported()) {
-                const hlsHostel4Cam5  = new Hls();
-                hlsHostel4Cam5.loadSource(videoSrcHostel4Cam5);
-                hlsHostel4Cam5.attachMedia(videoHostel4Cam5);
-                hlsHostel4Cam5.on(Hls.Events.MANIFEST_PARSED, () => {
-                    videoHostel4Cam5.play();
-                });
-    
-            } else if (videoHostel4Cam5.canPlayType('application/vnd.apple.mpegurl')) {
-                videoHostel4Cam5.src = videoSrcHostel4Cam5;
-                videoHostel4Cam5.addEventListener('loadedmetadata', () => {
-                    videoHostel4Cam5.play();
-                });
-            }
-        </script>
 
         <!--ADD NEW COPY SCRIPT FOR VIEW NEW CAMERA-->
 
